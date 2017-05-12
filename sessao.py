@@ -34,5 +34,5 @@ def sessao(cod_sessao):
 def sessao():
     return sessoes
 def remover_sessoes():
-    
+    global sessoes
     sessoes=[]
