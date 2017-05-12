@@ -2,6 +2,7 @@ import sessao
 import sala
 import filme
 
+
 def imprimir_sessao(sessoes):
     print(sessoes)
     print('Cod. Sessão: ',sessoes[0])
@@ -10,7 +11,7 @@ def imprimir_sessao(sessoes):
     print('Horário: ',sessoes[3])
     print('Capacidade: ',sessoes[4])
     
-def criar():
+def menu_criar():
     cod_sessao = int(input('Digite o código da sessão: '))
     cod_filme = int(input('Digite o código do filme: '))
     cod_sala = int(input('Digite o código da sala: '))
@@ -18,7 +19,7 @@ def criar():
     capacidade = int(input('Digite a capacidade da sessão :'))
     sessao.criar_sessao(cod_sessao,cod_filme,cod_sala,horario,capacidade)
 
-def buscar():
+def menu_buscar():
     cod_sessao= int(input('Buscar sessão pelo código da sessão: '))
     o = sessao.buscar_sessao(cod_sessao)
     if o==None:
@@ -26,13 +27,13 @@ def buscar():
     else:
         imprimir_sessao(o)
 
-def listar():
+def menu_listar():
     print(' Listar sessões \n')
     sessoes = sessao.listar_sessao()
     for s in sessoes:
         imprimir_sessao(s)
 
-def excluir():
+def menu_excluir():
     print('\n Excluir sessão')
     cod_sessao = int(input('Cod. Sessao: '))
     s = sessao.excluir_sessao(cod_sessao)
@@ -41,7 +42,7 @@ def excluir():
     else:
         print ("Sessão excluida")
     
-def alterar():
+def menu_alterar():
     print('\n Alterar sessão')
     cod_sessao = int(input('Cod. Sessão: '))
     s = sessao.listar_sessao()
@@ -61,14 +62,14 @@ def alterar():
         sessao.alterar_sessoes(cod_sessao, cod_filme, cod_sala, horario, capacidade)
         return ss
 
-def excluirTodas():
+def menu_excluirTodas():
     sessao.remover_todas_as_sessoes()
 
-def verificar():
+def menu_verificar():
     cod_sessao = int(input('Digite o cód. sessão: '))
     print('Capacidade da sessão é de :',sessao.verificar_disponibilidade(cod_sessao), ' pessoas.')
         
-def mostrar():
+def menu_mostrar():
     run_sessao = True
     menu = ("\n----------------\n"+
              "(1) Criar sessão \n" +
@@ -86,21 +87,21 @@ def mostrar():
         op = int(input("Digite sua escolha: "))
 
         if op == 1:
-            criar()
+            menu_criar()
         elif op == 2:
-            listar()
+            menu_listar()
         elif op == 3:       
-            buscar()
+            menu_buscar()
         elif op == 4:
-            excluir()
+            menu_excluir()
         elif op == 5:
-            alterar()
+            menu_alterar()
         elif op == 6:
-            excluirTodas()
+            menu_excluirTodas()
         elif op ==7:
-            verificar()
+            menu_verificar()
         elif op == 0:
-            sessao = False
+            run_sessao = False
 
 if __name__ == "__main__":
     menu_mostrar()
