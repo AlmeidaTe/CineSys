@@ -1,5 +1,5 @@
 import sessao
-
+import sala
 
 def imprimir_sessao(sessoes):
     print(sessoes)
