@@ -1,6 +1,4 @@
 import sessao
-import sala
-import filme
 
 
 def imprimir_sessao(sessoes):
@@ -11,7 +9,7 @@ def imprimir_sessao(sessoes):
     print('Horário: ',sessoes[3])
     print('Capacidade: ',sessoes[4])
     
-def menu_criar():
+def criar():
     cod_sessao = int(input('Digite o código da sessão: '))
     cod_filme = int(input('Digite o código do filme: '))
     cod_sala = int(input('Digite o código da sala: '))
@@ -19,7 +17,7 @@ def menu_criar():
     capacidade = int(input('Digite a capacidade da sessão :'))
     sessao.criar_sessao(cod_sessao,cod_filme,cod_sala,horario,capacidade)
 
-def menu_buscar():
+def buscar():
     cod_sessao= int(input('Buscar sessão pelo código da sessão: '))
     o = sessao.buscar_sessao(cod_sessao)
     if o==None:
@@ -27,13 +25,13 @@ def menu_buscar():
     else:
         imprimir_sessao(o)
 
-def menu_listar():
+def listar():
     print(' Listar sessões \n')
     sessoes = sessao.listar_sessao()
     for s in sessoes:
         imprimir_sessao(s)
 
-def menu_excluir():
+def excluir():
     print('\n Excluir sessão')
     cod_sessao = int(input('Cod. Sessao: '))
     s = sessao.excluir_sessao(cod_sessao)
@@ -42,7 +40,7 @@ def menu_excluir():
     else:
         print ("Sessão excluida")
     
-def menu_alterar():
+def alterar():
     print('\n Alterar sessão')
     cod_sessao = int(input('Cod. Sessão: '))
     s = sessao.listar_sessao()
@@ -62,14 +60,14 @@ def menu_alterar():
         sessao.alterar_sessoes(cod_sessao, cod_filme, cod_sala, horario, capacidade)
         return ss
 
-def menu_excluirTodas():
+def excluirTodas():
     sessao.remover_todas_as_sessoes()
 
-def menu_verificar():
+def verificar():
     cod_sessao = int(input('Digite o cód. sessão: '))
     print('Capacidade da sessão é de :',sessao.verificar_disponibilidade(cod_sessao), ' pessoas.')
         
-def menu_mostrar():
+def mostrar():
     run_sessao = True
     menu = ("\n----------------\n"+
              "(1) Criar sessão \n" +
@@ -87,26 +85,21 @@ def menu_mostrar():
         op = int(input("Digite sua escolha: "))
 
         if op == 1:
-            menu_criar()
+            criar()
         elif op == 2:
-            menu_listar()
+            listar()
         elif op == 3:       
-            menu_buscar()
+            buscar()
         elif op == 4:
             menu_excluir()
         elif op == 5:
-            menu_alterar()
+            alterar()
         elif op == 6:
-            menu_excluirTodas()
+            excluirTodas()
         elif op ==7:
-            menu_verificar()
+            verificar()
         elif op == 0:
-            run_sessao = False
+            sessao = False
 
 if __name__ == "__main__":
     menu_mostrar()
-    
-
-        
-    
-
