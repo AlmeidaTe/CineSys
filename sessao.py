@@ -1,4 +1,4 @@
-
+sessões = []
 import sala
 import filme
 
