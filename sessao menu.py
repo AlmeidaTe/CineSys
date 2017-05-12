@@ -1,6 +1,6 @@
 import sessao
 import sala
-
+import filme
 def imprimir_sessao(sessoes):
     print(sessoes)
     print('Cod. Sessão: ',sessoes[0])
