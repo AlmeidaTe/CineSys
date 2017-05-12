@@ -12,7 +12,10 @@ class TestSala(unittest.TestCase):
         self.assertEqual(1,len(sessoes))
         s=sessoes[0]
         self.assertEqual(36,s[0])
-        
+        self.assertEqual(65,s[1])
+        self.assertEqual(11,s[2])
+        self.assertEqual(9,s[3])
+        self.assertEqual(23,s[4])
         
     def test_buscar_sessao(self):
         sessao.criar_sessao(36,65,11,9,23)
@@ -21,7 +24,10 @@ class TestSala(unittest.TestCase):
         s=sessao.buscar_sessao(3)
 
         self.assertEqual(3,s[0])
-       
+        self.assertEqual(5,s[1])
+        self.assertEqual(1,s[2])
+        self.assertEqual(2,s[3])
+        self.assertEqual(65,s[4])
        
     def test_excluir_sessao(self):
         sessao.criar_sessao(36,65,11,9,23)
@@ -40,7 +46,10 @@ class TestSala(unittest.TestCase):
         s[3] = 12
         s[4] = 65
         self.assertEqual(3,s[0])
-        
+        self.assertEqual(69,s[1])
+        self.assertEqual(11,s[2])
+        self.assertEqual(12,s[3])
+        self.assertEqual(65,s[4])
 
     def test_verificar_disponibilidade(self):
         sessao.criar_sessao(36,65,11,9,23)
@@ -50,3 +59,4 @@ class TestSala(unittest.TestCase):
 
 if __name__ =='__main__':
     unittest.main(exit=False)
+
