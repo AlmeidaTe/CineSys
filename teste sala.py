@@ -15,7 +15,7 @@ class TestSala(unittest.TestCase):
         self.assertEqual(11,s[0])
         self.assertEqual(30,s[1])
 
-    def obter_sala(self):
+    def test_obter_sala(self):
         sala.criar_sala(11,30)
         sala.criar_sala(3,58)
         
