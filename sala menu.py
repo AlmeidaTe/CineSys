@@ -1,3 +1,5 @@
+import sala
+
 def imprimir_sala(salas):
     print('Cod. Sala: ',salas[0])
     print('Capacidade: ', salas[1])
@@ -83,6 +85,11 @@ def menu_mostrar():
 if __name__ == "__main__":
     menu_mostrar()
     
+
+        
+    
+
+
 
         
     
