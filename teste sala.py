@@ -23,7 +23,7 @@ class TestSala(unittest.TestCase):
         
         self.assertEqual(11,s[0])
         
-    def excluir_sala(self):
+   def test_excluir_sala(self):
         sala.criar_sala(11,30)
         sala.criar_sala(3,58)
         sala.excluir_sala(3)
