@@ -1,15 +1,15 @@
-import sala
+
 
 def imprimir_sala(salas):
     print('Cod. Sala: ',salas[0])
     print('Capacidade: ', salas[1])
     
-def menu_criar():
+def criar():
     cod_sala = int(input('Digite o código da sala: '))
     capacidade = int(input('Digite a capacidade :'))
     sala.criar_sala(cod_sala,capacidade)
 
-def menu_obter():
+def obter():
     cod_sala= int(input('Obter sala pelo código de sala: '))
     o = sala.obter_sala(cod_sala)
     if o==None:
@@ -17,13 +17,13 @@ def menu_obter():
     else:
         imprimir_sala(o)
 
-def menu_listar():
+def listar():
     print(' Listar salas \n')
     salas = sala.listar_salas()
     for s in salas:
         imprimir_sala(s)
 
-def menu_excluir():
+def excluir():
     print('\n Excluir sala')
     cod_sala = int(input('Cod. Sala: '))
     s = sala.excluir_sala(cod_sala)
@@ -32,7 +32,7 @@ def menu_excluir():
     else:
         print ("Sala excluida")
     
-def menu_alterar():
+def alterar():
     print('\n Alterar sala')
     cod_sala = int(input('Cod. Sala: '))
     s = sala.listar_salas()
@@ -45,11 +45,11 @@ def menu_alterar():
         sala.alterar_sala(cod_sala,capacidade)
         return capacidade
 
-def menu_excluirTodas():
+def excluirTodas():
     sala.remover_todas_as_salas()
     
         
-def menu_mostrar():
+def mostrar():
     run_sala = True
     menu = ("\n----------------\n"+
              "(1) Criar sala \n" +
@@ -66,25 +66,23 @@ def menu_mostrar():
         op = int(input("Digite sua escolha: "))
 
         if op == 1:
-            menu_criar()
+            criar()
         elif op == 2:
-            menu_listar()
+            listar()
         elif op == 3:       
-            menu_obter()
+            obter()
         elif op == 4:
-            menu_excluir()
+            excluir()
         elif op == 5:
-            menu_alterar()
+            alterar()
         elif op == 6:
-            menu_excluirTodas()
+            excluirTodas()
         elif op ==7:
-            menu_criar()
+            criar()
         elif op == 0:
             run_sala = False
 
 if __name__ == "__main__":
     menu_mostrar()
-    
-
         
     
