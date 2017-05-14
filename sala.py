@@ -1,5 +1,4 @@
-salas=[]
-
+salas = []
 def criar_sala(cod_sala,capacidade):
     sala = [cod_sala,capacidade]
     salas.append(sala)
@@ -23,7 +22,7 @@ def alterar_sala(cod_sala,capacidade):
             return True
     return False
 def remover_todas_as_salas():
-
+    global salas
     salas=[]
 
 def listar_salas():
