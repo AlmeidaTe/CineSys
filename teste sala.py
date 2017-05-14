@@ -13,6 +13,7 @@ class TestSala(unittest.TestCase):
         self.assertEqual(1,len(salas))
         s=salas[0]
         self.assertEqual(11,s[0])
+        self.assertEqual(30,s[1])
 
     def obter_sala(self):
         sala.criar_sala(11,30)
