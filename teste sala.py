@@ -7,7 +7,7 @@ class TestSala(unittest.TestCase):
     def setUp(self):
         sala.remover_todas_as_salas()
     
-    def criar_sala(self):
+    def test_criar_sala(self):
         sala.criar_sala(11,30)
         salas = sala.listar_salas()
         self.assertEqual(1,len(salas))
