@@ -30,7 +30,7 @@ class TestSala(unittest.TestCase):
         s = sala.obter_sala(3)
         self.assertIsNone(s)
         
-    def alterar_sala(self):
+    def test_alterar_sala(self):
         sala.criar_sala(11,30)
         sala.criar_sala(3,58)
         s = sala.obter_sala(11)
@@ -41,6 +41,3 @@ class TestSala(unittest.TestCase):
 
 if __name__ =='__main__':
     unittest.main(exit=False)
-
-
-
