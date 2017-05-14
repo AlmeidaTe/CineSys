@@ -1,3 +1,7 @@
+import unittest
+
+
+
 class TestSala(unittest.TestCase):
 
     def setUp(self):
@@ -36,3 +40,4 @@ class TestSala(unittest.TestCase):
 
 if __name__ =='__main__':
     unittest.main(exit=False)
+
